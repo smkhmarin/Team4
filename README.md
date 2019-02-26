@@ -1,2 +1,6 @@
 # Team4
-# Preetham
+Preetham
+Lassley
+Khmarin 
+Janice Ng
+
