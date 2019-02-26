@@ -1,3 +1,3 @@
+<<<<<<< HEAD
 # Team4
 Khmarin 
-Janice
