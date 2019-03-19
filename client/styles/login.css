@@ -1,6 +1,7 @@
 body{
 	width:100%;
 	height:100%;
+	padding: 50px;
 }
 h1 {
 	font-size: 50px;
@@ -32,6 +33,11 @@ label {
 #login_form {
 	margin: 50px;
 	padding: 50px;
+	display: inline-block;
+}
+.label-box {
+	width: 125px;
+	text-align: left;
 }
 #main {
 	margin: auto;
@@ -51,4 +57,8 @@ label {
 	font: bold 30px arial, sans-serif;
 	text-shadow:none;
 	text-align: center;
+	border-radius: 10px;
+}
+#submit_button:hover {
+	background: #657786;
 }

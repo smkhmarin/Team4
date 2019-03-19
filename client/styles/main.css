@@ -1,13 +1,13 @@
 body {
     width: 100%;
     text-align: center;
-    background-color: #d1e2ff;
+    background-color: #1DA1F2;
 }
 .main-body-content {
     width: 80%;
     margin: 0 auto;
     text-align: left;  
-    background-color: #f2f6ff;
+    background-color: #F5F8FA;
     padding: 50px;
     display: inline-block;
 }
@@ -17,20 +17,21 @@ h1 {
 #header {
     width: 100%;
     display: inline-block;
-    margin-bottom: 50px;
 }
 #logo {
     width: 100%;
     float: left;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 #filter-boxes {
     width: 100%;
     display: inline-block;
 }
 .input-group {
-    width: 500px;
+    width: 400px;
     display: inline-block;
+    margin-bottom: 10px;
+    float: left;
 }
 .tweet-box {
     width: 500px;
@@ -79,10 +80,10 @@ h1 {
     border: 1px solid black;
     display: inline-block;
     text-align: center;
-    width: 200px;
+    width: 100px;
+    margin-left: 10px;
 }
 #location-dropdown {
-    float: right;
     position: relative;
     display: inline-block;
 }
