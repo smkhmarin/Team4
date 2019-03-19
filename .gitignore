@@ -9,4 +9,4 @@ node_modules
 #Best practice is to *not* include your config.js file on a remote repo, but for grading, 
 #we are going to include it with your submission
 
-#server/config/config.js
+server/config/config.js
