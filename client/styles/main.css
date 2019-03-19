@@ -20,43 +20,35 @@ h1 {
     margin-bottom: 50px;
 }
 #logo {
-    width: 90%;
+    width: 100%;
     float: left;
+    margin-bottom: 50px;
 }
-#nav-buttons {
-    width: 10%;
+#filter-boxes {
+    width: 100%;
     display: inline-block;
 }
-.button {
-    display: inline-block;
-    padding: 10px;
-    background-color: orange;
-    float: right;
-}
-.form-control {
+.input-group {
     width: 500px;
+    display: inline-block;
 }
 .tweet-box {
-    width: 400px;
+    width: 500px;
     height: 200px;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid black;
+    border-radius: 25px;
 }
 .column-left {
     width: 50%;
     display: inline-block;
     float: left;
+    margin-right: 50px;
 }
 .column-right {
-    width: 50%;
+    width: 40%;
     display: inline-block;
-}
-#more-info-box {
-
-}
-#graph-box {
-    
 }
 #button-layer {
     width: 100%;
@@ -110,3 +102,22 @@ h1 {
 }
 
 #location-dropdown:hover .dropdown-content {display: block;}
+
+#number-trending {
+    padding: 5px;
+    font-size: 1.5em;
+    color: #1DA1F2;
+    padding: 5px;
+    text-align: center;
+    width: 10%;
+    height: 50px;
+    display: inline-block;
+    margin-right: 10px;
+}
+#content-trending {
+    width: 85%;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
+}
