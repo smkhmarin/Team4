@@ -6,52 +6,25 @@
 	</head>
 	<body>
 		<div class="container" id = "main">
-			<div class = "row">
-			
-				<div class = "col-lg-6">
-					<div class="logo">
-						<img src = "media/logo.png" alt = "Trademark Infringement" width = "300" height = "300">
+			<div id="header">
+					<img src = "media/logo.png" alt = "Trademark Infringement" width = "300" height = "300">
+					<h1>TweetData</h1>
+			</div>
+			<div id="body-content">
+				<div id="login-form">
+					<div class="credentials-row">
+						<label>Username:</label>
+						<input type="text">
 					</div>
-				</div>
-			
-				<div class = "col-lg-6">
-					<div class="title">
-						<h1>TweetData</h1>
+					<div class="credentials-row">
+						<label>Password:</label>
+						<input type="password">
+					</div>
+					<div class = "input" id = "submit_holder">
+						<input type = "submit" value = "Login" id = "submit_button">
 					</div>
 				</div>
 			</div>
-			
-			<form id = "login_form">
-				<div class = "input">
-					<div class = "row">
-						<div class = "col-lg-6">
-							<label>Username:&nbsp;</label>
-						</div>
-						
-						<div class = "col-lg-6">
-							<input type="text">
-						</div>
-					</div>
-				</div>
-					
-						
-				<div class = "input">
-					<div class = "row">
-						<div class = "col-lg-6">
-							<label>Password:</label>
-						</div>
-						
-						<div class = "col-lg-6">
-							<input type="password">
-						</div>
-					</div>
-				</div>
-				<div class = "input" id = "submit_holder">
-					<input type = "submit" value = "Login" id = "submit_button">
-				</div>
-			</form>
-			
-			
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
