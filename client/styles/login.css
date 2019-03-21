@@ -35,9 +35,12 @@ label {
 	padding: 50px;
 	display: inline-block;
 }
-.label-box {
+.label-box, .label-box-2 {
 	width: 125px;
 	text-align: left;
+}
+.label-box-2 {
+	width: 200px;
 }
 #main {
 	margin: auto;
@@ -45,6 +48,7 @@ label {
 }
 #submit_holder {
 	margin-top: 50px;
+	margin-bottom: 10px;
 	display: inline-block;
 }
 

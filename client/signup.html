@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/login.css">
+	</head>
+	<body>
+		<div class="container" id = "main">
+			<div id="header">
+					<img src = "media/logo.png" alt = "Trademark Infringement" width = "300" height = "300">
+					<h1>TweetData</h1>
+			</div>
+			<div id="body-content">
+                <form>
+                    <div id="login-form">
+                        <div class="credentials-row">
+                            <label class="label-box-2">Enter username</label>
+                            <input type="text" name="usrname" required>
+                        </div>
+                        <div class="credentials-row">
+                            <label class="label-box-2">Enter password</label>
+                            <input type="password" name="psswrd" required>
+                        </div>
+                        <div class="credentials-row">
+                            <label class="label-box-2">Confirm password</label>
+                            <input type="password" name="confirm_psswrd" required>
+                        </div>
+                        <div class = "input" id = "submit_holder">
+                            <input type = "submit" value = "Login" id = "submit_button">
+                        </div>
+                        <div>
+                            <a href="login.html">Already have an account? Log in here.</a>
+                        </div>
+                    </div>
+                </form>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+		<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+		<script src="app.js"></script>
+		<script src="listingController.js"></script>
+		<script src="listingFactory.js"></script>
+	</body>
+</html>
