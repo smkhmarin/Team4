@@ -4,24 +4,6 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var listingSchema = new Schema({
-<<<<<<< HEAD
-  name: {
-    type: String, 
-    required: true
-  }, 
-  code: {
-    type: String, 
-    required: true, 
-    unique: true
-  }, 
-  address: String, 
-  coordinates: {
-    latitude: Number, 
-    longitude: Number
-  },
-  created_at: Date,
-  updated_at: Date
-=======
   name: String,
   placeType: {
     code: Number,
@@ -35,7 +17,6 @@ var listingSchema = new Schema({
 	unique: true
   },
   countryCode: String
->>>>>>> janice
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
