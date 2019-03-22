@@ -6,6 +6,7 @@ var path = require('path'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
     usersRouter = require('../routes/user.server.routes');
+    twitterRouter = require('../routes/twitter.server.routes');
 
 module.exports.init = function() {
   //connect to database
@@ -33,6 +34,7 @@ module.exports.init = function() {
 
   app.use('/api/listings',listingsRouter);
   app.use('/api/user', usersRouter);
+  app.use('/api/twitter', twitterRouter);
   /**TODO 
   Use the listings router for requests to the api */
 
