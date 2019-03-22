@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var listingSchema = new Schema({
+<<<<<<< HEAD
   name: {
     type: String, 
     required: true
@@ -20,6 +21,21 @@ var listingSchema = new Schema({
   },
   created_at: Date,
   updated_at: Date
+=======
+  name: String,
+  placeType: {
+    code: Number,
+    name: String
+  },
+  url: String,
+  parentid: Number,
+  country: String,
+  woeid: {
+	type: Number,
+	unique: true
+  },
+  countryCode: String
+>>>>>>> janice
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
