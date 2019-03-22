@@ -5,6 +5,7 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
+    usersRouter = require('../routes/user.server.routes');
 
 module.exports.init = function() {
   //connect to database
@@ -28,9 +29,10 @@ module.exports.init = function() {
   app.get('./listings',function(request,response)
   {
     res.send(listingData);
-  })
+  });
 
   app.use('/api/listings',listingsRouter);
+  app.use('/api/user', usersRouter);
   /**TODO 
   Use the listings router for requests to the api */
 

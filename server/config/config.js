@@ -4,7 +4,7 @@
 
 module.exports = {
   "db": {
-    "uri": 'mongodb://test:testtest1@ds151943.mlab.com:51943/uf_listings', //place the URI of your mongo database here.
+    "uri": process.env.DB_URI , //place the URI of your mongo database here.
       "_id": "uf_listings.test",
       "user": "test",
       "db": "uf_listings",
@@ -15,8 +15,13 @@ module.exports = {
           }
       ]
   },
+  "twitter": {
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+  },
   "port" : process.env.PORT || 8080
-  
 };
 
 /* Now go to the JSONtoMongo.js file and include this file as a variable named 'config' with a require() */
