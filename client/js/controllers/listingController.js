@@ -14,14 +14,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 	  *Save the article using the Listings factory. If the object is successfully 
 	  saved redirect back to the list page. Otherwise, display the error
 	 */
-<<<<<<< HEAD
-  $scope.listings.push($scope.newListing);
-      Listings.create().then(function(response) {
-        $scope.listings = response.data;
-      }, function(error) {
-        console.log('Unable to create listings:', error);
-    });
-=======
 	 var newEntry = {
 			"code": $scope.newListing.code, 
 			"name": $scope.newListing.name, 
@@ -37,24 +29,12 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 	 }).error(function(error) {
 		console.log(error);
 	 });
->>>>>>> janice
     };
 
     $scope.deleteListing = function(id) {
 	   /**TODO
         Delete the article using the Listings factory. If the removal is successful, 
 		navigate back to 'listing.list'. Otherwise, display the error. 
-<<<<<<< HEAD
-       */console.log(id);
-        Listings.delete(id).then(function(response) {
-          $scope.listings = response.data;
-         
-          
-        }, function(error) {
-          
-          console.log('Unable to delete listings:', error);
-      });
-=======
        */
 	   
 		var i = $scope.listings.indexOf(id);
@@ -64,7 +44,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 		}).error(function(error) {
 			console.log(error);
 		});
->>>>>>> janice
     };
 
     $scope.showDetails = function(index) {
