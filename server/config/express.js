@@ -5,11 +5,12 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
+    usersRouter = require('../routes/user.server.routes');
+    twitterRouter = require('../routes/twitter.server.routes');
 
 module.exports.init = function() {
   //connect to database
   mongoose.connect(config.db.uri);
-
   //initialize app
   var app = express();
 
@@ -24,6 +25,14 @@ module.exports.init = function() {
   Serve static files */
   app.use('/', express.static(path.join(__dirname,'/../../client')));
   
+  app.get('./listings',function(request,response)
+  {
+    res.send(listingData);
+  });
+
+  app.use('/api/listings',listingsRouter);
+  app.use('/api/user', usersRouter);
+  app.use('/api/twitter', twitterRouter);
   /**TODO 
   Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
