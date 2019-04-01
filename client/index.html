@@ -23,15 +23,15 @@
         <div  ng-controller="ListingsController">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg cus-tb_mg-20">
-                        <button class="btn btn-primary" onclick="">Tweet Data</button>
-                        <button class="btn btn-primary" onclick="">User Data</button>
-                    </div>
-                </div>
+                    <!-- <div class="col-lg cus-tb_mg-20">
+                         <button class="btn btn-primary" onclick="">Tweet Data</button>
+                         <button class="btn btn-primary" onclick="">User Data</button>
+                         </div>
+                    -->               </div>
                 <div class="row">
                     <div class="col-6">
                         <div id="filter-boxes">
-                            <div class="input-group" id="searchBar">
+                            <form class="input-group" ng-submit id="searchBar">
                                 <input type="text" class="form-control" ng-model="newSearch.city" placeholder="City" />
                                 <div class="form-group">
                                     <div class="col-sm-10">
@@ -91,8 +91,8 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary" ng-click="searchTrending()">Search</button>
-                            </div>
+                                <button type="submit" class="btn btn-primary" ng-click="searchTrending()">Search</button>
+                            </form>
                         </div>
                         <div ng-if="searchError" class="alert alert-danger alert-dismissable">
                             {{searchError}}
