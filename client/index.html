@@ -128,7 +128,9 @@
                             <div ng-repeat="tweet in trendingTweets" class="col-lg" id="more-info-box">
                                 <div><img src="{{tweet.user.profile_image_url}}"/> </div>
                                 <a href="http://twitter.com/{{tweet.user.screen_name}}" <p>@{{tweet.user.screen_name}}</p></a>
-                                <p>tweet: {{tweet.text}}</p>
+                                <p>{{tweet.text}}</p>
+                                <h6>Favs: {{tweet.favorite_count}}</h6>
+                                <h5>RTs: {{tweet.retweet_count}}</h6>
                             </div>
                         </div>
 

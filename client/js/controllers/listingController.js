@@ -125,7 +125,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.generateSampleData = function() {
             for (let j = 0; j < 3; j++) {
                 $scope.myData.datasets[j].data = [];
-                console.log($scope.myData.datasets[j])
                 for (let i = 0; i < 9; i++) {
                     $scope.myData.datasets[j].data.push(Math.round(Math.random() * 100000 + 1500));
                     let prefix = "";
@@ -138,8 +137,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
                     else {
                         prefix = "Favorite volume"
                     }
-                    console.log("Dataset" + j + " data index" + i)
-                    console.log($scope.myData.datasets[j]);
                     $scope.myData.datasets[j].label = prefix;
                }
            }
