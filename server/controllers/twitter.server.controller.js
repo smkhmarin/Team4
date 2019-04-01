@@ -110,7 +110,7 @@ exports.trendingTweets = function(req, res) {
             const params = {
                 q: req.query.topic,
                 geocode: formattedLatLong,
-                result_type: popular
+                result_type: "popular"
             };
 
             client.get('search/tweets', params, function(error, tweets, response) {
