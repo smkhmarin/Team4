@@ -1,9 +1,8 @@
-const users = require('../controllers/listings.server.controller.js'), 
+const users = require('../controllers/user.server.controller.js'),
     express = require('express'),
     router = express.Router();
 
 router.route('/')
-    .get(users.list)
     .post(users.create);
 
 router.route('/:username')

@@ -1,53 +1,55 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
   function($scope, Listings) {
     /* Get all the listings, then bind it to the scope */
-    Listings.getAll().then(function(response) {
-      $scope.listings = response.data;
+    Listings.getTrendingTopics().then(function(response) {
+        $scope.searchError = false;
+        if (!response.error) {
+            $scope.trendingTopics = response.data.topics;
+            console.log("got it!");
+        }
+        else {
+            console.log(error);
+            $scope.searchError = error;
+        }
     }, function(error) {
-      console.log('Unable to retrieve listings:', error);
+      console.log('Unable to retrieve trending:', error);
     });
 
-    $scope.detailedInfo = undefined;
+    $scope.getLocationName = function() {
+        console.log($scope.location);
+        if ($scope.location) {
+            return $scope.location.city + ", " + $scope.location.state;
+        }
+        return "the world";
+    }
 
-    $scope.addListing = function() {
-	  /**TODO 
-	  *Save the article using the Listings factory. If the object is successfully 
-	  saved redirect back to the list page. Otherwise, display the error
-	 */
-	 var newEntry = {
-			"code": $scope.newListing.code, 
-			"name": $scope.newListing.name, 
-			"address": $scope.newListing.address};
-			
-	 $scope.listings.push(newEntry);
-	 Listings.create(newEntry).success(function() {
-		Listings.getAll().then(function(response) {
-		  $scope.listings = response.data;
-		}, function(error) {
-		  console.log('Unable to retrieve listings:', error);
-		});
-	 }).error(function(error) {
-		console.log(error);
-	 });
+    $scope.searchTrending = function() {
+        $scope.trendingTweets = false;
+        Listings.getTrendingTopics($scope.newSearch).then(function(response) {
+            $scope.searchError = null;
+            console.log(response);
+            if (!response.data.error) {
+                $scope.trendingTopics = response.data.topics;
+                $scope.location = response.data.location;
+                console.log("got it!");
+            }
+            else {
+                console.log(response.data.error);
+                $scope.searchError = response.data.error;
+            }
+       }, function(error) {
+            console.log('Unable to retrieve trending:', error);
+      });
     };
 
-    $scope.deleteListing = function(id) {
-	   /**TODO
-        Delete the article using the Listings factory. If the removal is successful, 
-		navigate back to 'listing.list'. Otherwise, display the error. 
-       */
-	   
-		var i = $scope.listings.indexOf(id);
-		$scope.listings.splice(i, 1);
-		Listings.delete(id._id).success(function() {
-			console.log('Success');
-		}).error(function(error) {
-			console.log(error);
-		});
-    };
-
-    $scope.showDetails = function(index) {
-      $scope.detailedInfo = $scope.listings[index];
+    $scope.findTrendingTweets = function(topic) {
+        Listings.getTweetsForTopic(topic, $scope.location).then(function(response) {
+            console.log("uhhhhh....");
+            console.log(response);
+            $scope.trendingTweets = response.data.statuses;
+        }, function(error) {
+            console.log("could not load tweets!");
+        });
     };
   }
 ]);
