@@ -1,0 +1,32 @@
+For user: 
+Sign up for a new user account
+Login in to the user account
+Look at the world trending topics
+Click on the top trending tweet and examine the graphs of the different attributes
+Examine the location of the top tweet
+Narrow down the trending data by searching for trending tweets that are in the same location as the top trending tweet
+Examine the graphs and metrics for that tweet
+Take the topic of the tweet and search for the topic in the keyword search
+Examine the generic metrics for the keyword search
+Examine the metrics and graphs of the other tweets of the keyword search
+Signout of the website
+
+
+Key Metrics:
+Record time to perform each step
+Record any errors thrown
+Record any bugs
+
+For observer:
+From main login account click sign up here
+enter username and password
+click login
+look at the trending data that appears
+click on elements to populate graphs
+type in city and select state from drop down
+click search
+look at primary data graph
+look at secondary graphs by clicking on elements you want to examine
+type the keyword into the keyword search box
+click search
+examine metric charts by clicking on the elements
