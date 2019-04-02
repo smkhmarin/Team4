@@ -2,10 +2,10 @@ angular.module('listings', []).factory('Listings', function($http) {
   var methods = {
     getTrendingTopics: function(location) {
         if (location) {
-            return $http.get('http://localhost:8080/api/twitter/trending'+ "?city=" + location.city + "&state=" + location.state);
+            return $http.get('/api/twitter/trending'+ "?city=" + location.city + "&state=" + location.state);
         }
         else {
-            return $http.get('http://localhost:8080/api/twitter/trending');
+            return $http.get('/api/twitter/trending');
         }
     },
     getTweetsForTopic: function(topic, location) {
@@ -21,14 +21,14 @@ angular.module('listings', []).factory('Listings', function($http) {
             queryString = "?topic=" + topic;
         }
         console.log(queryString);
-        return $http.get('http://localhost:8080/api/twitter/trending/tweets'+ queryString);
+        return $http.get('/api/twitter/trending/tweets'+ queryString);
     },
 
     delete: function(id) {
 	   /**TODO
         return result of HTTP delete method
        */
-		return $http.delete('http://localhost:8080/api/listings/' + id);
+		return $http.delete('/api/listings/' + id);
     }
   };
 
