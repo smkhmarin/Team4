@@ -19,6 +19,14 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
                   data: [],
                   backgroundColor: [
                       "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
+                      "#FF6384",
                  ],
                   hoverBackgroundColor: [
                       "#FF6384",
@@ -37,6 +45,14 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
                   data: [],
                   backgroundColor: [
                       "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
+                      "#36A2EB",
                   ],
                   hoverBackgroundColor: [
                       "#36A2EB",
@@ -53,6 +69,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
                   label: "Retweet volume",
                   data: [],
                   backgroundColor: [
+                      "#FFCE56",
+                      "#FFCE56",
+                      "#FFCE56",
+                      "#FFCE56",
+                      "#FFCE56",
+                      "#FFCE56",
+                      "#FFCE56",
                       "#FFCE56",
                   ],
                   hoverBackgroundColor: [

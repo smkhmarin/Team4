@@ -29,6 +29,7 @@ exports.login = function(req, res) {
         else { 
             if (user.validPassword(req.body.password)) { 
                 console.log("Logged in");
+				res.redirect('/');
             } 
             else { 
                 console.log("Incorrect password");
