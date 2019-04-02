@@ -30,12 +30,11 @@ userSchema.methods.setPassword = function(password) {
 	this.passwordSalt = crypto.randomBytes(16).toString('hex'); 
 	
 	//hash the salt and password
-	64 length and sha512 digest 
     this.passwordHash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, `sha512`).toString(`hex`); 
 };
 
-UserSchema.methods.validPassword = function(password) { 
-    var .passwordHash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, `sha512`).toString(`hex`); 
+userSchema.methods.validPassword = function(password) { 
+    var passwordHash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, `sha512`).toString(`hex`); 
     return this.passwordHash === passwordHash; 
 }; 
 
