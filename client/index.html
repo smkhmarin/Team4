@@ -108,14 +108,19 @@
                                     <th scope="col">Trending topics in {{getLocationName()}}</th>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="topic in trendingTopics">
+                                <tr ng-repeat="topic in trendingTopics" ng-click="findTrendingTweets(topic.name)">
                                     <th scope="row">{{$index + 1}}</th>
-                                    <td><span ng-click="findTrendingTweets(topic.name)"> {{topic.name}}</span></td>
+                                    <td>{{topic.name}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="col-8">
+					
+                        <div class="row" id="data-area" ng-if="!trendingTweets">
+                            <h2>No data found. Please click on a trending topic.</h2>
+                        </div>
+						
                         <div class="row" ng-if="trendingTweets">
                             <canvas
                                 tc-chartjs-bar
@@ -134,9 +139,6 @@
                             </div>
                         </div>
 
-                        <div class="row" ng-if="!trendingTweets">
-                            <h1>Please click a trending topic</h1>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -38,3 +38,10 @@ body {
 @media (min-width: 576px){
     .col-sm-10 {max-width: 100%}
 }
+
+td {
+    cursor: pointer
+}
+tr:hover {
+    background-color: #AAB8C2;
+}

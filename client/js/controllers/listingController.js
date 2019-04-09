@@ -146,8 +146,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         Listings.getTweetsForTopic(topic, $scope.location).then(function(response) {
             console.log("uhhhhh....");
             console.log(response);
-            $scope.trendingTweets = response.data.statuses;
-            $scope.generateSampleData();
+			if (response.data.statuses.length == 0) {
+				$scope.trendingTweets = false;
+			}
+			else {
+				$scope.trendingTweets = response.data.statuses;
+				$scope.generateSampleData();
+			}
         }, function(error) {
             console.log("could not load tweets!");
         });
