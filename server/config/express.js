@@ -18,6 +18,7 @@ module.exports.init = function() {
 
   //body parsing middleware 
   app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded());
 
   
   /**TODO
