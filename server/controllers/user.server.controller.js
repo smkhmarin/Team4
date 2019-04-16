@@ -18,7 +18,7 @@ exports.create = function(req, res) {
 		if(err) {
 			console.log("error creating user");
 		} else {
-			res.json(newUser);
+			res.redirect("/login");
 		}
 	});
 }
@@ -27,7 +27,7 @@ exports.login = function(req, res) {
     // check pw hashes match, create session cookie
 	User.findOne({ username : req.body.username }, function(err, user) { 
         if (user === null) { 
-            console.log("User does not exist");
+            console.log("User " + req.body.username + " does not exist");
         } 
         else { 
             if (user.validPassword(req.body.password)) { 
