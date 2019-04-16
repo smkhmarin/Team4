@@ -21,12 +21,31 @@ module.exports.init = function() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded());
 
-  app.use('/', express.static(path.join(__dirname,'/../../client')));
+  // session setup
+
+  app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  }));
+
+  app.use('/assets', express.static(path.join(__dirname,'/../../client')));
+
+  const requireLoggedIn = function(req, res, next) {
+    console.log("I ran!!!!");
+    if (req.session.username) {
+      next();
+    }
+    else {
+      res.redirect("/signup");
+    }
+  };
 
   app.use('/api/user', usersRouter);
   app.use('/api/twitter', twitterRouter);
 
   app.get('/signup', function(req, res) {
+      console.log("shoulda redirectd here huh");
     res.sendFile(path.resolve('client/signup.html'));
   });
 
@@ -34,7 +53,7 @@ module.exports.init = function() {
     res.sendFile(path.resolve('client/login.html'));
   });
 
-  app.all('*', function(req, res) {
+  app.all('/*', requireLoggedIn, function(req, res) {
   	res.sendFile(path.resolve('client/index.html'));
   });
 
