@@ -7,6 +7,9 @@ router.route('/register')
 	
 router.route('/login')
 	.post(users.login);
+
+router.route('/logout')
+    .get(users.logout)
 	
 router.route('/register')
 	.post(users.create);

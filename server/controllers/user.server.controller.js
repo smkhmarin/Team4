@@ -7,18 +7,18 @@ exports.create = function(req, res) {
 	console.log("signup works");
 	console.log(req.body);
 	let newUser = new User();
-	
+
 	newUser.username = req.body.username;
 	newUser.firstName = req.body.firstName;
 	newUser.lastName = req.body.lastName;
 	newUser.email = req.body.email;
 	newUser.setPassword(req.body.password);
-	
+
 	newUser.save(function(err) {
 		if(err) {
 			console.log("error creating user");
 		} else {
-			res.json(newUser);
+			res.redirect("/login");
 		}
 	});
 }
@@ -27,15 +27,21 @@ exports.login = function(req, res) {
     // check pw hashes match, create session cookie
 	User.findOne({ username : req.body.username }, function(err, user) { 
         if (user === null) { 
-            console.log("User does not exist");
+            console.log("User " + req.body.username + " does not exist");
+            res.redirect('/login')
+
+            // TODO splash message of wrong pw
         } 
         else { 
             if (user.validPassword(req.body.password)) { 
                 console.log("Logged in");
-				res.redirect('/');
+                req.session.username = user.username;
+        				res.redirect('/');
             } 
             else { 
                 console.log("Incorrect password");
+                // TODO splash message of wrong pw
+                res.redirect('/login')
             } 
         } 
     });
@@ -43,6 +49,12 @@ exports.login = function(req, res) {
 
 exports.logout = function(req, res) {
     // destroy session
+    console.log("logging out...");
+    if (req.session.username) {
+        console.log("should b destroying cookie for " + req.session.username);
+        req.session.destroy();
+        res.redirect('/login');
+    }
 }
 
 exports.read = function(req, res) {

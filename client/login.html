@@ -2,24 +2,24 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="styles/login.css">
+		<link rel="stylesheet" href="/assets/styles/login.css">
 	</head>
 	<body>
 		<div class="container" id = "main">
 			<div id="header">
-					<img src = "media/logo.png" alt = "Trademark Infringement" width = "300" height = "300">
+					<img src = "/assets/media/logo.png" alt = "Trademark Infringement" width = "300" height = "300">
 					<h1>TweetData</h1>
 			</div>
 			<div id="body-content">
-				<form>
+				<form action="/api/user/login" method="post" >
 					<div id="login-form">
 							<div class="credentials-row">
 								<label class="label-box">Username</label>
-								<input type="text" name="usrname" required>
+								<input type="text" name="username" required>
 							</div>
 							<div class="credentials-row">
 								<label class="label-box">Password</label>
-								<input type="password" name="psswrd" required>
+								<input type="password" name="password" required>
 							</div>
 							<div class = "input" id = "submit_holder">
 								<input type = "submit" value = "Login" id = "submit_button">
@@ -36,8 +36,5 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-		<script src="app.js"></script>
-		<script src="listingController.js"></script>
-		<script src="listingFactory.js"></script>
 	</body>
 </html>
