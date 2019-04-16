@@ -4,6 +4,8 @@ var crypto = require('crypto');
 
 exports.create = function(req, res) {
     // accept password, hash/salt it, save to db
+	console.log("signup works");
+	console.log(req.body);
 	let newUser = new User();
 	
 	newUser.username = req.body.username;

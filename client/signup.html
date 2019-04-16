@@ -11,19 +11,23 @@
 					<h1>TweetData</h1>
 			</div>
 			<div id="body-content">
-                <form>
+                <form action="/api/user/register" method="post">
                     <div id="login-form">
+						<div class="credentials-row">
+                            <label class="label-box-2">First Name</label>
+                            <input type="text" name="firstName" required>
+                        </div>
+						<div class="credentials-row">
+                            <label class="label-box-2">Last Name</label>
+                            <input type="text" name="lastName" required>
+                        </div>
                         <div class="credentials-row">
                             <label class="label-box-2">Enter username</label>
-                            <input type="text" name="usrname" required>
+                            <input type="text" name="username" required>
                         </div>
                         <div class="credentials-row">
                             <label class="label-box-2">Enter password</label>
-                            <input type="password" name="psswrd" required>
-                        </div>
-                        <div class="credentials-row">
-                            <label class="label-box-2">Confirm password</label>
-                            <input type="password" name="confirm_psswrd" required>
+                            <input type="password" name="password" required>
                         </div>
                         <div class = "input" id = "submit_holder">
                             <input type = "submit" value = "Sign Up" id = "submit_button">
