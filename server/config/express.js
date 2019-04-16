@@ -4,7 +4,7 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    usersRouter = require('../routes/user.server.routes');
+    usersRouter = require('../routes/user.server.routes'),
     twitterRouter = require('../routes/twitter.server.routes');
 
 module.exports.init = function() {
@@ -31,8 +31,17 @@ module.exports.init = function() {
 
   /**TODO 
   Go to homepage for all routes not specified */ 
-  app.all('/*', function(req, res) {
-	res.sendFile(path.resolve('client/index.html'));  
+
+  app.get('/signup', function(req, res) {
+    res.sendFile(path.resolve('client/signup.html'));
+  });
+
+  app.get('/login', function(req, res) {
+    res.sendFile(path.resolve('client/login.html'));
+  });
+
+  app.all('*', function(req, res) {
+  	res.sendFile(path.resolve('client/index.html'));  
   });
 
   return app;
