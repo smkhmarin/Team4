@@ -2,8 +2,14 @@ const users = require('../controllers/user.server.controller.js'),
     express = require('express'),
     router = express.Router();
 
-router.route('/')
-    .post(users.create);
+router.route('/register')
+	.post(users.create);
+	
+router.route('/login')
+	.post(users.login);
+	
+router.route('/register')
+	.post(users.create);
 
 router.route('/:username')
     .get(users.read)
