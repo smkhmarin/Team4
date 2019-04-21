@@ -135,7 +135,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
             console.log($scope.newSearch);
             
             if (!response.data.error) {
-                
+                $scope.trendingTopics = response.data.topics;
                 $scope.location = response.data.location;
                 console.log("topic");
                 console.log(response.data)
