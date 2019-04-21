@@ -128,18 +128,42 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 
     $scope.searchTrending = function() {
         $scope.trendingTweets = false;
+        
         Listings.getTrendingTopics($scope.newSearch).then(function(response) {
             $scope.searchError = null;
             console.log(response);
+            console.log($scope.newSearch);
+            
             if (!response.data.error) {
-                $scope.trendingTopics = response.data.topics;
+                
                 $scope.location = response.data.location;
+                console.log("topic");
+                console.log(response.data)
+                console.log("location");
+                console.log($scope.location)
                 console.log("got it!");
             }
             else {
+                
                 console.log(response.data.error);
                 $scope.searchError = response.data.error;
             }
+            if($scope.newSearch.topic)
+                {
+                    Listings.getTweetsForTopic($scope.newSearch.topic, $scope.location).then(function(response) {
+                        console.log("uhhhhh....");
+                        console.log(response);
+                        if (response.data.statuses.length == 0) {
+                            $scope.trendingTweets = false;
+                        }
+                        else {
+                            $scope.trendingTweets = response.data.statuses;
+                            $scope.generateSampleData();
+                        }
+                    }, function(error) {
+                        console.log("could not load tweets!");
+                    });
+                }
        }, function(error) {
             console.log('Unable to retrieve trending:', error);
       });
