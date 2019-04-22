@@ -37,7 +37,7 @@ module.exports.init = function() {
       next();
     }
     else {
-      res.redirect("/signup");
+      res.redirect("/login");
     }
   };
 
