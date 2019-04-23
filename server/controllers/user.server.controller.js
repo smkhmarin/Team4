@@ -28,9 +28,7 @@ exports.login = function(req, res) {
 	User.findOne({ username : req.body.username }, function(err, user) { 
         if (user === null) { 
             console.log("User " + req.body.username + " does not exist");
-            res.redirect('/login')
-
-            // TODO splash message of wrong pw
+            res.render('login', {error: "User does not exist or password is incorrect."});
         } 
         else { 
             if (user.validPassword(req.body.password)) { 
@@ -40,8 +38,7 @@ exports.login = function(req, res) {
             } 
             else { 
                 console.log("Incorrect password");
-                // TODO splash message of wrong pw
-                res.redirect('/login')
+                res.render('login', {error: "User does not exist or password is incorrect."});
             } 
         } 
     });

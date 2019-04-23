@@ -11,6 +11,9 @@
 					<h1>TweetData</h1>
 			</div>
 			<div id="body-content">
+          <% if (locals.error) { %>
+              <div class="alert alert-danger"><%= error %></div>
+          <% } %>
 				<form action="/api/user/login" method="post" >
 					<div id="login-form">
 							<div class="credentials-row">
