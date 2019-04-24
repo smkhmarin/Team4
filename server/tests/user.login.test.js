@@ -39,8 +39,10 @@ describe('Logging in test', function() {
 	
 	it('should not be able to login', function(done) {
 		agent
+			.post('/login')
 			.send(badUserCredentials)
 			.expect(302)
+			.expect('Location', '/login')
 			.end(function(err, res) {
 				if(err) {
 					return err
@@ -54,7 +56,7 @@ function loggedIn() {
 	return function(done) {
 		agent
 			.post('/login')
-			.sent(userCredentials)
+			.send(userCredentials)
 			.expect(302)
 			.end(done)
 	}
