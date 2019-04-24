@@ -14,6 +14,9 @@ module.exports.init = function() {
   //initialize app
   var app = express();
 
+  // use ejs for login page without dragging in angular
+  app.set('view engine', 'ejs');
+
   //enable request logging for development debugging
   app.use(morgan('dev'));
 
@@ -37,7 +40,7 @@ module.exports.init = function() {
       next();
     }
     else {
-      res.redirect("/signup");
+      res.redirect("/login");
     }
   };
 
@@ -49,8 +52,11 @@ module.exports.init = function() {
     res.sendFile(path.resolve('client/signup.html'));
   });
 
+    app.set('views', path.join(__dirname, '../../client/views'));
+
   app.get('/login', function(req, res) {
-    res.sendFile(path.resolve('client/login.html'));
+
+      res.render('login.ejs');
   });
 
   app.all('/*', requireLoggedIn, function(req, res) {

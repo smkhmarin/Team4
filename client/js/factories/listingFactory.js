@@ -1,7 +1,10 @@
 angular.module('listings', []).factory('Listings', function($http) {
   var methods = {
-    getTrendingTopics: function(location) {
-        if (location) {
+    getTrendingTopics: function(location, topic) {
+        console.log("FACTORY")
+        console.log(location)
+
+       if (location) {
             return $http.get('/api/twitter/trending'+ "?city=" + location.city + "&state=" + location.state);
         }
         else {
